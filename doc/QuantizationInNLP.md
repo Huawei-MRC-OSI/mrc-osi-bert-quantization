@@ -1,3 +1,7 @@
+### Most popular papers
+
+* [Quantization and Training of Neural Networks for Efficient Integer-Arithmetic-Only Inference](https://arxiv.org/pdf/1712.05877.pdf)
+
 ### Transformer and related models
 
 * A student report, covers BERT as well <http://web.stanford.edu/class/cs224n/reports/custom/15742249.pdf>
@@ -12,7 +16,6 @@
   * Need to investigate applications to more up-to-date embeddings
 
 ### Surveys
-
 * [A Survey of Model Compression and Acceleration for Deep Neural Networks](https://arxiv.org/abs/1710.09282)
 * [Training Quantized Nets: A Deeper Understanding](https://arxiv.org/abs/1706.02379)
 * [Efficient and Effective Quantization for Sparse DNNs](https://arxiv.org/abs/1903.03046)

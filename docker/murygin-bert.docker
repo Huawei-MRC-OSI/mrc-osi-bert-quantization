@@ -1,0 +1,18 @@
+FROM tensorflow/tensorflow:1.14.0-gpu-py3-jupyter
+
+COPY proxy-certificates.sh /install/proxy-certificates.sh
+RUN /bin/sh /install/proxy-certificates.sh
+
+RUN apt-get update --fix-missing
+RUN apt-get install -y sudo
+
+COPY set_java_home.sh /install/set_java_home.sh
+RUN /bin/sh /install/set_java_home.sh
+COPY with_the_same_user.sh /install/with_the_same_user.sh
+COPY proxy-environment.sh /install/proxy-environment.sh
+RUN /bin/sh /install/proxy-environment.sh
+
+RUN apt-get install -y ipython3
+RUN pip3 install bert-tensorflow
+RUN pip3 install sklearn
+RUN pip3 install seqeval[gpu]
