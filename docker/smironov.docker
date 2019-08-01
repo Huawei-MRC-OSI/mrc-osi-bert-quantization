@@ -1,0 +1,37 @@
+FROM tensorflow/tensorflow:1.13.1-gpu-py3-jupyter
+
+COPY proxy-certificates.sh /install/proxy-certificates.sh
+RUN /bin/sh /install/proxy-certificates.sh
+
+RUN apt-get update --fix-missing
+RUN apt-get install -y sudo
+
+COPY set_java_home.sh /install/set_java_home.sh
+RUN /bin/sh /install/set_java_home.sh
+COPY with_the_same_user.sh /install/with_the_same_user.sh
+
+RUN apt-get install -y ipython3
+RUN pip3 install keras
+RUN pip3 install sklearn
+
+COPY proxy-environment.sh /install/proxy-environment.sh
+RUN /bin/sh /install/proxy-environment.sh
+
+RUN apt-get update && apt-get install -y \
+  libgl1-mesa-glx libqt5x11extras5 x11-apps net-tools netcat
+
+RUN pip3 install scikit-learn seaborn PyQT5 PySide2
+RUN pip3 install pycodestyle
+RUN pip3 install seqeval
+RUN pip3 install sacred
+# RUN pip3 install pymongo
+# RUN curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+# RUN apt-get install -y nodejs
+# RUN npm install -g omniboard
+RUN pip3 install beautifultable
+RUN pip3 install kerasglove
+RUN pip3 install tqdm
+
+
+RUN pip3 install --upgrade pip && \
+    pip3 install python-language-server pyls-mypy mypy
