@@ -16,3 +16,5 @@ RUN apt-get install -y ipython3
 RUN pip3 install bert-tensorflow
 RUN pip3 install sklearn
 RUN pip3 install seqeval[gpu]
+RUN apt-get install -y wget
+RUN apt-get install -y git

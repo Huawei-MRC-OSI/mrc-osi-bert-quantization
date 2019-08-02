@@ -35,3 +35,12 @@ All actions are done in current directory.
 * TensorFlow BERT isn't converted in TFLite model because of error related with permutation: <https://github.com/tensorflow/tensorflow/issues/22109>.
 * Base BERT isn't fine-tuned after inserting fake quantization at the first step. It is necessary to use "quant\_delay" parameter to fine-tune BERT.
 * Used a lot of GPU memory when setting parameter "quant\_delay". If GPU memory isn't enough then you can reduce number of transformer layers in the configuration file.
+
+### Results
+
+* Legend:  
+  ![Figures](./legend.png)
+* Slot filling accuracy:  
+  ![Figures](./slot_filling_accuracy.png)
+* Frame accuracy:  
+  ![Figures](./frame_accuracy.png)
